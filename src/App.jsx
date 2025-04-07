@@ -56,7 +56,10 @@ function App() {
           />
         )}
         {showSuccessModal && (
-          <SuccessModal setShowLoginModal={setShowLoginModal} />
+          <SuccessModal
+            setShowSuccessModal={setShowSuccessModal}
+            setShowLoginModal={setShowLoginModal}
+          />
         )}
       </Router>
     </div>

@@ -20,7 +20,7 @@
 }
 
 .footer__list-item {
-  font-family: Roboto;
+  font-family: Inter;
   font-weight: 400;
   font-size: 18px;
   letter-spacing: 0;
@@ -40,7 +40,7 @@
 }
 
 .footer__copywright {
-  font-family: Roboto;
+  font-family: Inter;
   font-weight: 400;
   font-size: 13px;
   line-height: 22px;

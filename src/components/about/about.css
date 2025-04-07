@@ -1,11 +1,11 @@
 .about {
-  font-family: Arial, sans-serif;
+  font-family: Inter;
   padding: 20px;
-  display: flex; /* Ativa o Flexbox */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  height: 100vh; /* 100% da altura da tela */
-  flex-direction: column; /* Organiza os itens de forma vertical */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
 }
 
 .about__title {
@@ -18,7 +18,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center; /* Garante que as cartas fiquem centralizadas */
+  justify-content: center;
 }
 
 .about__error {
@@ -34,8 +34,8 @@
   overflow: hidden;
   padding: 20px;
   display: flex;
-  flex-direction: column; /* Organiza os elementos dentro das cartas */
-  justify-content: space-between; /* Espaça os itens dentro da carta */
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card__image {

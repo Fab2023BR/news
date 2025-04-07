@@ -4,8 +4,16 @@ import { IoClose } from "react-icons/io5";
 
 import "./header.css";
 
-const Header = ({ setShowLoginModal }) => {
+const Header = ({ setShowLoginModal, onSearch }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault(); // impede o formulário de recarregar a página
+    if (onSearch && searchTerm.trim()) {
+      onSearch(searchTerm); // chama a função que busca as notícias
+    }
+  };
 
   return (
     <header className="header">
@@ -28,7 +36,8 @@ const Header = ({ setShowLoginModal }) => {
             />
           )}
         </div>
-        {showMenu ? (
+
+        {showMenu && (
           <nav className="header__nav">
             <ul className="header__list">
               <li className="header__list-item">
@@ -49,7 +58,8 @@ const Header = ({ setShowLoginModal }) => {
               </li>
             </ul>
           </nav>
-        ) : null}
+        )}
+
         <nav className="header__nav header__nav_desktop">
           <ul className="header__list">
             <li className="header__list-item">
@@ -68,17 +78,21 @@ const Header = ({ setShowLoginModal }) => {
           </ul>
         </nav>
       </div>
+
       <div className="header__hero">
         <h1 className="header__hero-title">O que está acontecendo no mundo?</h1>
         <p className="header__hero-paragraph">
           Encontre as últimas notícias sobre qualquer tema e salve elas em sua
           conta pessoal
         </p>
-        <form className="header__form">
+
+        <form className="header__form" onSubmit={handleSearch}>
           <input
             type="text"
             placeholder="Natureza"
             className="header__form-input"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button className="header__form-button" type="submit">
             Procurar
