@@ -4,9 +4,23 @@ import "./registerModal.css";
 const RegisterModal = ({ setShowRegisterModal, setShowSuccessModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(setShowSuccessModal);
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const username = e.target.username.value;
+
+    if (!email || !password || !username) {
+      alert("Por favor, preencha todos os campos!");
+      return;
+    }
+
+    console.log("Formulário enviado:", email, password, username);
+
+    setShowRegisterModal(false);
+
     setShowSuccessModal(true);
   };
+
   return (
     <div className="registerModal">
       <div className="registerModal__wrapper-form">
@@ -19,6 +33,7 @@ const RegisterModal = ({ setShowRegisterModal, setShowSuccessModal }) => {
           <label className="registerModal__form-label">
             Email
             <input
+              name="email"
               className="registerModal__form-input"
               placeholder="Insira e-mail"
             />
@@ -26,6 +41,7 @@ const RegisterModal = ({ setShowRegisterModal, setShowSuccessModal }) => {
           <label className="registerModal__form-label">
             Senha
             <input
+              name="password"
               className="registerModal__form-input"
               placeholder="Insira a senha"
             />
@@ -33,6 +49,7 @@ const RegisterModal = ({ setShowRegisterModal, setShowSuccessModal }) => {
           <label className="registerModal__form-label">
             Nome de usuário
             <input
+              name="username"
               className="registerModal__form-input"
               placeholder="Insira seu nome de usuário"
             />
@@ -45,6 +62,21 @@ const RegisterModal = ({ setShowRegisterModal, setShowSuccessModal }) => {
             <button
               type="button"
               onClick={() => {
+                const email = document.querySelector(
+                  'input[name="email"]'
+                ).value;
+                const password = document.querySelector(
+                  'input[name="password"]'
+                ).value;
+                const username = document.querySelector(
+                  'input[name="username"]'
+                ).value;
+
+                if (!email || !password || !username) {
+                  alert("Por favor, preencha todos os campos antes de entrar!");
+                  return;
+                }
+
                 setShowRegisterModal(false);
                 setShowSuccessModal(true);
               }}

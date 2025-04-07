@@ -15,12 +15,21 @@
 
 .registerModal__close-button {
   position: absolute;
-  width: 24px;
-  height: 24px;
-  z-index: 10;
-  color: #fff;
-  top: -24px;
-  right: 0;
+  top: -20px;
+  right: -20px;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .registerModal__wrapper-form {
@@ -37,7 +46,7 @@
 }
 
 .registerModal__title {
-  font-family: Roboto;
+  font-family: Inter;
   font-weight: 900;
   font-size: 24px;
   line-height: 100%;
@@ -86,7 +95,7 @@
   width: 100%;
   max-width: 288px;
   height: 64px;
-  font-family: Roboto;
+  font-family: Inter;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -112,8 +121,6 @@
   letter-spacing: 0%;
   text-align: center;
   color: #000;
-  /* margin-top: 23px; */
-  /* margin-bottom: 0; */
 }
 
 .registerModal__button-redirect button {
