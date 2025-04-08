@@ -16,10 +16,12 @@ function App() {
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [articles, setArticles] = useState([]);
+  const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearchNews = async (keyword) => {
+    setHasSearched(true);
     const url = `https://newsapi.org/v2/top-headlines?country=us&q=${encodeURIComponent(
-      keyword,
+      keyword
     )}&apiKey=a288f46ed536409b88ff45b911547068`;
 
     try {
@@ -57,7 +59,7 @@ function App() {
                   setShowLoginModal={setShowLoginModal}
                   onSearch={handleSearchNews}
                 />
-                <NewsList noticias={articles} /> {/* <-- Show results */}
+                <NewsList noticias={articles} hasSearched={hasSearched} /> {}
                 <Footer />
               </>
             }

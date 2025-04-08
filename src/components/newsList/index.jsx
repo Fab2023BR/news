@@ -2,9 +2,11 @@ import React from "react";
 import { CiBookmark } from "react-icons/ci";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-const NewsList = ({ noticias }) => {
+const NewsList = ({ noticias, hasSearched }) => {
   if (!noticias || noticias.length === 0) {
-    return <p className="about__no-news">Nenhuma notícia encontrada.</p>;
+    return hasSearched ? (
+      <p className="about__no-news">Nenhuma notícia encontrada.</p>
+    ) : null;
   }
 
   return (
