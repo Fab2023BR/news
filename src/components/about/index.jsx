@@ -44,7 +44,7 @@ const About = () => {
                 alt="Imagem da notícia"
                 className="card__image"
               />
-              <div>
+              {/* <div>
                 <div className="card__wrapper-buttons">
                   <p className="card__text">Categoria</p>
                   <button className="card__delete-buttom">
@@ -57,7 +57,7 @@ const About = () => {
                 <button className="card__save-buttom">
                   <CiBookmark className="card__save-icon" color="#B6BCBF" />
                 </button>
-              </div>
+              </div> */}
               <div className="card__info">
                 <p className="card__news-date">Data da notícia</p>
                 <h3 className="card__news-title">{noticia.title}</h3>

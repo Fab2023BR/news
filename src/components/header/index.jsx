@@ -82,14 +82,13 @@ const Header = ({ setShowLoginModal, onSearch }) => {
       <div className="header__hero">
         <h1 className="header__hero-title">O que está acontecendo no mundo?</h1>
         <p className="header__hero-paragraph">
-          Encontre as últimas notícias sobre qualquer tema e salve elas em sua
-          conta pessoal
+          Encontre as últimas notícias sobre Trump, White Lotus, NFL e Samsung
         </p>
 
         <form className="header__form" onSubmit={handleSearch}>
           <input
             type="text"
-            placeholder="Natureza"
+            placeholder="Notícias"
             className="header__form-input"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}

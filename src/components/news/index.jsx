@@ -45,7 +45,7 @@ const News = () => {
               />
               <div>
                 <div className="card__wrapper-buttons">
-                  <p className="card__text">Categoria</p>
+                  <p className="card__text">Notícias</p>
                   <button className="card__delete-buttom">
                     <FaRegTrashAlt
                       className="card__delete-icon"

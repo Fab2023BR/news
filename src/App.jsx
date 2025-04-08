@@ -9,23 +9,41 @@ import LoginModal from "./components/loginModal";
 import RegisterModal from "./components/registerModal";
 import SuccessModal from "./components/successModal";
 import "./App.css";
+import NewsList from "./components/newsList";
 
 function App() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [articles, setArticles] = useState([]);
+
+  const handleSearchNews = async (keyword) => {
+    const url = `https://newsapi.org/v2/top-headlines?country=us&q=${encodeURIComponent(
+      keyword,
+    )}&apiKey=a288f46ed536409b88ff45b911547068`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.status === "ok") {
+        setArticles(data.articles);
+      } else {
+        console.error("Error fetching news:", data.message);
+      }
+    } catch (error) {
+      console.error("Fetch failed:", error);
+    }
+  };
 
   return (
     <div className="page">
       <Router>
-        {" "}
         <Routes>
-          {" "}
           <Route
             path="/saved-news"
             element={
               <ProtectedRoute isLoggedIn={true}>
-                {" "}
                 <HeaderNewsSaved />
                 <Footer />
               </ProtectedRoute>
@@ -35,7 +53,11 @@ function App() {
             path="/"
             element={
               <>
-                <Header setShowLoginModal={setShowLoginModal} />
+                <Header
+                  setShowLoginModal={setShowLoginModal}
+                  onSearch={handleSearchNews}
+                />
+                <NewsList noticias={articles} /> {/* <-- Show results */}
                 <Footer />
               </>
             }
