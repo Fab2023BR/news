@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+  font-family: Inter;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.noticias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noticia {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+p {
+  color: #555;
+  font-size: 14px;
+}
+
+a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #1a73e8;
+}
+
+a:hover {
+  text-decoration: underline;
+}
